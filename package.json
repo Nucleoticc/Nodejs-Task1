@@ -1,0 +1,30 @@
+{
+  "name": "node_task",
+  "version": "1.0.0",
+  "description": "1. Clone repo into your github\r 2. Use https://expressjs.com/\r 3. Use this library to connect to mysql https://sequelize.org/\r 4. Use this library https://github.com/stripe/stripe-php\r 5. Use bootstrap 4 for ui\r 6. Make the following page by end of day, no exceptions:\r - / => show products from db table products (id, title, description, image, price)\r - /product/:id => show product detail with image of product and title and description. \r Have a button buy now that open a modal for stripe checkout.\r Once checkout done, write into order table(id, product_id, total, stripe_id, status(paid, failed)).\r Show thank you page of purchase showing a table of product title, price, payment method",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manaknight/node_task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manaknight/node_task/issues"
+  },
+  "homepage": "https://github.com/manaknight/node_task#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.15.1",
+    "stripe": "^8.202.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

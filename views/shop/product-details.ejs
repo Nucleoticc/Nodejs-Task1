@@ -1,0 +1,39 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+            <main class="container">
+                <div class="card">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <img class="m-2 w-75" src="<%= product.imageUrl %>" alt="<%= product.title %>">
+                        </div>
+                        <div class="w-50 col">
+                            <h1>
+                                <%= product.title %>
+                            </h1>
+                            <h2>
+                                Price: $<%= product.price %>
+                            </h2>
+                            <form class="mt-4 form-inline" action="/payment" method="POST">
+                                <script src="//checkout.stripe.com/v3/checkout.js" class="stripe-button"
+                                    data-key="pk_test_51IWQUwH8oljXErmdg6L4MhsuB6tDdmumlHFfyNaopty2U27pmRcqMX1c868zn838lGQtU1eYV6bKRSQtMFWf36VT00aNsvnTOE"
+                                    data-amount="<%= product.price %>00" data-currency="usd"
+                                    data-name="<%= product.title %>" data-description="Buy <%= product.title %>"
+                                    data-locale="auto">
+                                    </script>
+                                <input type="hidden" name="title" value="<%= product.title %>">
+                                <input type="hidden" name="amount" value="<%= product.price %>">
+                                <input type="hidden" name="productId" value="<%= product.id %>">
+                            </form>
+                        </div>
+                    </div>
+                    <hr class="m-1">
+                    <div class="card-body">
+                        <p>
+                            <%= product.description %>
+                        </p>
+                    </div>
+                </div>
+            </main>
